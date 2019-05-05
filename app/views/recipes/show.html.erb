@@ -1,0 +1,15 @@
+<h1><%= @recipe.name %></h1>
+
+<% if @user %>
+Author: <%= link_to @user.name, user_path(@user) %><br>
+<% end %>
+
+Ingredients<br>
+<ul>
+<% @ingredients.each do |ingredient| %>
+<li>
+<%= link_to ingredient.name, ingredient_path(ingredient) %>
+</li>
+<% end %>
+</ul>
+

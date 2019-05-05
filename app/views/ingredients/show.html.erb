@@ -1,0 +1,24 @@
+<h1><%= @ingredient.name %></h1>
+
+<% if @users.count > 0 %>
+Users allergic to this ingredient:
+<ul>
+<% @users.each do |user| %>
+  <li>
+  <%= link_to user.name, user_path(user) %>
+  </li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @recipes.count > 0 %>
+Recipes containing this ingredient:
+<ul>
+<% @recipes.each do |recipe| %>
+  <li>
+  <%= link_to recipe.name, recipe_path(recipe) %>
+  </li>
+<% end %>
+</ul>
+<% end %>
+
