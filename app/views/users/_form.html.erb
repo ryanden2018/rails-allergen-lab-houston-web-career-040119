@@ -9,13 +9,11 @@
 <% end %>
 
 
-<%= form_for @recipe do |f| %>
+<%= form_for @user do |f| %>
 
 <%= f.label :name %> <%= f.text_field :name %><br>
 
-Author: <%= f.collection_select :user_id, User.all, :id, :name %><br>
-
-Ingredients: <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %><br>
+Allergic to: <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %><br>
 
 <%= f.submit %>
 
